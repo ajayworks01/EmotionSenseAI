@@ -48,7 +48,7 @@ def analyze_emotion(text: str) -> dict:
         return _mock_analyze(text)
 
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.0-flash')
         response = model.generate_content(
             PROMPT_TEMPLATE.format(text=text),
             generation_config=genai.GenerationConfig(
