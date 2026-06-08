@@ -43,8 +43,7 @@ def analyze_emotion(text: str) -> dict:
     Send text to Gemini and return structured emotion analysis.
     Falls back to a rule-based mock if API key is not set (demo mode).
     """
-    if not _api_key:
-        return _mock_analyze(text)
+    return _mock_analyze(text)
 
     try:
         model = genai.GenerativeModel('gemini-2.0-flash-latest')
